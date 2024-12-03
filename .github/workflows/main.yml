@@ -1,9 +1,8 @@
 name: Build APK on Push to Main
 
 on:
-  push:
-    branches:
-      - main # 在 main 分支有推送时触发
+  schedule:
+    - cron: "45 * * * 1-5"
 
 jobs:
   build:
