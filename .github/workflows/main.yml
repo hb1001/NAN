@@ -2,7 +2,7 @@ name: Build APK on Push to Main
 
 on:
   schedule:
-    - cron: "45 * * * 1-5"
+    - cron: "06 * * * 1-5"
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
 
     # Step 3: 缓存 Gradle 依赖
     - name: Cache Gradle dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v2
       with:
         path: ~/.gradle/caches
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
